@@ -43,7 +43,7 @@ A modern web application for browsing, searching, and reviewing books. Built wit
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd my-book-recomendation-system
+   cd BASF-Case-Study
    ```
 
 2. **Install dependencies**
@@ -62,7 +62,7 @@ A modern web application for browsing, searching, and reviewing books. Built wit
 ## 🏗️ Project Structure
 
 ```
-my-book-recomendation-system/
+BASF-Case-Study/
 ├── src/
 │   ├── components/          # Reusable UI components
 │   │   ├── BookList.tsx     # Main book listing with search & pagination

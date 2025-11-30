@@ -65,8 +65,7 @@ const LoginPage: React.FC = () => {
             <Button variant="contained" type="submit">
               Login
             </Button>
-
-           
+            
           </Box>
         </form>
       </Paper>

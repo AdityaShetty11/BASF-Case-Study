@@ -15,17 +15,17 @@ const AppRoutes: React.FC = () => {
         <Route
           path="/books"
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <BooksPage />
-            // </PrivateRoute>
+             </PrivateRoute>
           }
         />
         <Route
           path="/book/:id"
           element={
-            // <PrivateRoute>
+            <PrivateRoute>
               <BookDetailPage />
-            // </PrivateRoute>
+            </PrivateRoute>
           }
         />
       </Routes>

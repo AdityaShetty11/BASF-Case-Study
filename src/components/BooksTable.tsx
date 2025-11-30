@@ -1,7 +1,6 @@
 import { ModuleRegistry, AllCommunityModule, ColDef } from 'ag-grid-community';
 ModuleRegistry.registerModules([AllCommunityModule]);
 
-// etc.
 import React, { useMemo } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import { Box, CircularProgress } from '@mui/material';

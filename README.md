@@ -36,7 +36,7 @@ A modern web application for browsing, searching, and reviewing books. Built wit
 - **UI Library**: Material-UI (MUI) 7.3.5
 - **Data Grid**: AG Grid Community 34.3.1
 - **Routing**: React Router DOM 7.9.6
-- **Styling**: Emotion, Styled Components
+- **Styling**: Styled Components
 
 ## 📦 Installation
 
@@ -105,7 +105,7 @@ BASF-Case-Study/
 
 ### Reviews & Ratings
 - User reviews and ratings are stored in Redux state
-- Data is lost on page reload (as per requirements)
+- Data is lost on page reload
 - Each book can have one review and rating per user session
 
 ## 📡 API Integration

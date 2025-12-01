@@ -4,6 +4,7 @@ export interface Book {
   author: string;
   genre: string;
   rating: number;
+  imageLinks: string;
 }
 
 export interface BooksState {

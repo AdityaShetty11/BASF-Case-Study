@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Book } from './types';
 
-export const fetchBooks = createAsyncThunk<Book[], string | undefined>(
+export const fetchBooks = createAsyncThunk(
   'books/fetchBooks',
   async (query?: string) => {
     const queryParam = query || 'subject:fiction';
@@ -20,7 +20,8 @@ export const fetchBooks = createAsyncThunk<Book[], string | undefined>(
       title: item.volumeInfo.title || 'No title',
       author: (item.volumeInfo.authors && item.volumeInfo.authors[0]) || 'Unknown',
       genre: item.volumeInfo.categories ? item.volumeInfo.categories[0] : 'N/A',
-      rating: item.volumeInfo.averageRating || 0
+      rating: item.volumeInfo.averageRating || 0,
+      imageLinks: item.volumeInfo.imageLinks.thumbnail || ''
     })) as Book[];
   }
 );

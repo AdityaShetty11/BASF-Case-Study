@@ -1,15 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { Book } from './types';
 
 export const fetchBooks = createAsyncThunk<Book[], string | undefined>(
   'books/fetchBooks',
   async (query?: string) => {
     const queryParam = query || 'subject:fiction';
-    const res = await fetch(
-      `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(queryParam)}`
-    );
 
-    const data = await res.json();
+    const response = await axios.get('https://www.googleapis.com/books/v1/volumes', {
+      params: { q: queryParam }
+    });
+
+    const data: any = response.data;
 
     if (!data.items) return [];
 

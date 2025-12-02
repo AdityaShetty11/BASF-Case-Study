@@ -1,8 +1,23 @@
 import React from 'react';
 import { Box, Typography, Paper, TextField, Rating, Stack } from '@mui/material';
 import { useParams } from 'react-router-dom';
+import styled from "styled-components";
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { setRating, setReview } from '../redux/books/reviewSlice';
+
+const BookDetailContainer = styled.div`
+display: flex;
+justify-content: space-between
+`
+const BookDescription = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+`;
+
+const BookImage = styled.div`
+display: flex
+`;
 
 const BookDetailPage: React.FC = () => {
   const { id = '' } = useParams<{ id: string }>();
@@ -15,11 +30,17 @@ const BookDetailPage: React.FC = () => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center" mt={4}>
       <Paper sx={{ p: 4, minWidth: 420 }}>
+        <BookDetailContainer>
+          <BookDescription>
         <Typography variant="h4" gutterBottom>{book.title}</Typography>
         <Typography variant="subtitle1" gutterBottom>by {book.author}</Typography>
         <Typography variant="body2" color="text.secondary" gutterBottom>Genre: {book.genre}</Typography>
         <Typography variant="body2" color="text.secondary" gutterBottom>Avg. Rating: {book.rating ?? 'N/A'}</Typography>
-
+        </BookDescription>
+        <BookImage>
+          <img src={book.imageLinks}/>
+        </BookImage>
+        </BookDetailContainer>
         <Stack direction="row" alignItems="center" spacing={2} mt={3} mb={1}>
           <Typography>Your Rating:</Typography>
           <Rating
